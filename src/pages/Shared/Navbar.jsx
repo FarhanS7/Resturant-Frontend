@@ -5,6 +5,7 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li>
+<<<<<<< HEAD
         <Link to="/">Home</Link>
       </li>
       <li>
@@ -13,12 +14,25 @@ const Navbar = () => {
 
       <li>
         <Link to="/order/salad">Order Food</Link>
+=======
+        <a>Item 1</a>
+      </li>
+      <li>
+        <a>Parent</a>
+      </li>
+      <li>
+        <a>Item 3</a>
+>>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
       </li>
     </>
   );
   return (
     <>
+<<<<<<< HEAD
       <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white max-w-7xl">
+=======
+      <div className="navbar fixed z-10 bg-opacity-30 bg-white max-w-7xl">
+>>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
