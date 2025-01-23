@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
-<<<<<<< HEAD
+import Login from "../pages/Login/Login";
 import Menu from "../pages/Menu/Menu/Menu";
 import Order from "../pages/Order/Order/Order";
-=======
->>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
+import Secret from "../pages/Shared/Secret";
+import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -16,17 +17,31 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-<<<<<<< HEAD
+
       {
-        path: "/menu",
+        path: "menu",
         element: <Menu />,
       },
       {
-        path: "/order/:category",
+        path: "order/:category",
         element: <Order />,
       },
-=======
->>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
+      },
+      {
+        path: "secret",
+        element: (
+          <PrivateRoute>
+            <Secret />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

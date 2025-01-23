@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { Carousel } from "react-responsive-carousel";
->>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import img1 from "../../../assets/home/01.jpg";
@@ -13,9 +10,8 @@ import img6 from "../../../assets/home/06.png";
 
 const Banner = () => {
   return (
-<<<<<<< HEAD
     <div>
-      <div className="carousel w-full h-[600px]">
+      {/* <div className="carousel w-full h-[600px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={img1} className="w-full" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -82,30 +78,29 @@ const Banner = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <Carousel>
+        <div>
+          <img src={img1} />
+        </div>
+        <div>
+          <img src={img2} />
+        </div>
+        <div>
+          <img src={img3} />
+        </div>
+        <div>
+          <img src={img4} />
+        </div>
+        <div>
+          <img src={img5} />
+        </div>
+        <div>
+          <img src={img6} />
+        </div>
+      </Carousel>
     </div>
-=======
-    <Carousel>
-      <div>
-        <img src={img1} />
-      </div>
-      <div>
-        <img src={img2} />
-      </div>
-      <div>
-        <img src={img3} />
-      </div>
-      <div>
-        <img src={img4} />
-      </div>
-      <div>
-        <img src={img5} />
-      </div>
-      <div>
-        <img src={img6} />
-      </div>
-    </Carousel>
->>>>>>> aa05866e6981d0e6474c19f61e20d06cb5cd03a1
   );
 };
 
