@@ -1,5 +1,5 @@
 import featuredImg from "../../../assets/home/featured.jpg";
-import SectionTitle from "../../../components/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import "./Featured.css";
 
 const Featured = () => {
@@ -9,7 +9,7 @@ const Featured = () => {
         subHeading="check it out"
         heading="Featured Item"
       ></SectionTitle>
-      <div className="md:flex justify-center items-center  bg-slate-500 bg-opacity-60 pb-20 pt-12 px-36">
+      <div className="md:flex justify-center items-center bg-slate-500 bg-opacity-60 pb-20 pt-12 px-36">
         <div>
           <img src={featuredImg} alt="" />
         </div>

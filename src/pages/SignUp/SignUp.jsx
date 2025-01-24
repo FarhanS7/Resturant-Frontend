@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../providers/AuthProvider"; // Correct import
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
   const {
@@ -12,8 +12,6 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-
-  // Use useContext inside the component
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -37,13 +35,12 @@ const SignUp = () => {
         })
         .catch((error) => console.log(error));
     });
-    navigate(from, { replace: true });
   };
 
   return (
     <>
       <Helmet>
-        <title>Divine Dine | Sign Up</title>
+        <title>Bistro Boss | Sign Up</title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -64,6 +61,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   {...register("name", { required: true })}
+                  name="name"
                   placeholder="Name"
                   className="input input-bordered"
                 />
@@ -92,6 +90,7 @@ const SignUp = () => {
                 <input
                   type="email"
                   {...register("email", { required: true })}
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                 />
@@ -127,10 +126,15 @@ const SignUp = () => {
                 )}
                 {errors.password?.type === "pattern" && (
                   <p className="text-red-600">
-                    Password must have one uppercase, one lowercase, one number,
+                    Password must have one Uppercase one lower case, one number
                     and one special character.
                   </p>
                 )}
+                <label className="label">
+                  <a href="#" className="label-text-alt link link-hover">
+                    Forgot password?
+                  </a>
+                </label>
               </div>
               <div className="form-control mt-6">
                 <input
@@ -142,7 +146,7 @@ const SignUp = () => {
             </form>
             <p>
               <small>
-                Already have an account? <Link to="/login">Login</Link>
+                Already have an account <Link to="/login">Login</Link>
               </small>
             </p>
           </div>

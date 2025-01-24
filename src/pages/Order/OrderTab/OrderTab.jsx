@@ -1,36 +1,28 @@
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Parallax } from "react-parallax";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import FoodCart from "../../../components/FoodCart";
-
-const OrderTab = ({ items }) => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
+const Cover = ({ img, title }) => {
   return (
-    <div>
-      <Swiper
-        pagination={pagination}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <div className="grid md:grid-cols-3 gap-10">
-            {items.map((item) => (
-              <FoodCart key={item._id} item={item}></FoodCart>
-            ))}
+    <Parallax
+      blur={{ min: -50, max: 50 }}
+      bgImage={img}
+      bgImageAlt="the menu"
+      strength={-200}
+    >
+      <div className="hero h-[700px]">
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold uppercase">{title}</h1>
+            <p className="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
           </div>
-        </SwiperSlide>
-      </Swiper>
-    </div>
+        </div>
+      </div>
+    </Parallax>
   );
 };
 
-export default OrderTab;
+export default Cover;
